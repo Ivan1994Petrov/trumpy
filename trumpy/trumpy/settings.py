@@ -79,9 +79,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'Cluster0',
-        'HOST': 'mongodb+srv://trumpy_db:<pass>@cluster0.blqqi.mongodb.net/Cluster0?retryWrites=true&w=majority',
+        'HOST': 'mongodb+srv://trumpy_db:trumpy_db_pass@cluster0.blqqi.mongodb.net/Cluster0?retryWrites=true&w=majority',
         'USER': 'trumpy_db',
-        'PASSWORD': '',
+        'PASSWORD': 'trumpy_db_pass',
     }
 }
 
