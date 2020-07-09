@@ -3,10 +3,11 @@ from django.core.management.base import BaseCommand
 import requests
 from datetime import datetime
 
-from core.models import Twit
+from core.models import Tweet
 
 
 class Command(BaseCommand):
+    """Fetch Trump tweets from url."""
     help = 'Sync database'
 
     def handle(self, *args, **options):
@@ -16,11 +17,11 @@ class Command(BaseCommand):
 
         for item in json_response:
 
-            if not Twit.objects.filter(id_str=item['id_str']).exists():
+            if not Tweet.objects.filter(id_str=item['id_str']).exists():
                 date_obj = datetime.strptime(item['created_at'],
                                              "%a %b %d %X %z %Y")
 
-                twit_obj = Twit.objects.create(
+                twit_obj = Tweet.objects.create(
                     source=item['source'],
                     id_str=item['id_str'],
                     text=item['text'],

@@ -38,11 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'core'
+    'core',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,17 +77,22 @@ WSGI_APPLICATION = 'trumpy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'Cluster0',
+#         'HOST': 'mongodb+srv://trumpy_db:trumpy_db_pass@cluster0.blqqi.mongodb.net/Cluster0?retryWrites=true&w=majority',
+#         'USER': 'trumpy_db',
+#         'PASSWORD': 'trumpy_db_pass',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'Cluster0',
-        'HOST': 'mongodb+srv://trumpy_db:trumpy_db_pass@cluster0.blqqi.mongodb.net/Cluster0?retryWrites=true&w=majority',
-        'USER': 'trumpy_db',
-        'PASSWORD': 'trumpy_db_pass',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -123,3 +130,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = [
+    "http://127.0.0.1:8080"
+]
+
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 5000
