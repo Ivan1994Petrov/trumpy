@@ -11,6 +11,6 @@ urlpatterns = [
          name='tweets_vs_retweets'),
     path('tweets-by-time-of-day/', tweets_by_time_of_day,
          name='tweets_by_time_of_day'),
-    path('most_common_tweet_words/', most_common_tweet_words,
+    path('most-common-tweet-words/', most_common_tweet_words,
          name='most_common_tweet_words')
 ]

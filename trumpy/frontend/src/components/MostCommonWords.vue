@@ -28,7 +28,7 @@ export default {
   },
   methods: {
       getData(){
-        axios.get("http://127.0.0.1:8000/most_common_tweet_words/")
+        axios.get("http://127.0.0.1:8000/most-common-tweet-words/")
         .then(res =>(this.barData = res.data))
         .catch(err => console.log(err));
       }
