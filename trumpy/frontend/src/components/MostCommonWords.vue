@@ -2,7 +2,7 @@
   <div class="">
     <div class="row">
       <div class="col-md-12 text-center">
-        <bar-chart :data="barData.most_common_words" title="Most Command Words" label="Frequency"
+        <bar-chart :data="barData.most_common_words" title="Most Commond Words" label="Frequency"
         xtitle="Frequency" ytitle="Words"></bar-chart>
       </div>
     </div>
