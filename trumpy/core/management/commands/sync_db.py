@@ -21,7 +21,7 @@ class Command(BaseCommand):
                 date_obj = datetime.strptime(item['created_at'],
                                              "%a %b %d %X %z %Y")
 
-                twit_obj = Tweet.objects.create(
+                tweet_obj = Tweet.objects.create(
                     source=item['source'],
                     id_str=item['id_str'],
                     text=item['text'],
@@ -32,4 +32,4 @@ class Command(BaseCommand):
                     favorite_count=item['favorite_count'],
                     is_retweet=item['is_retweet']
                 )
-                twit_obj.save()
+                tweet_obj.save()
