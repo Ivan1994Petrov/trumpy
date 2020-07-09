@@ -17,6 +17,7 @@ To run the project follow the steps:
 - install npm ```npm install```
 - run ```npm run build``` and ```npm run serve```
 - open http://localhost:8080/ in browser
+- to run the tests ```./manage.py test```
 
 ### Further work:
 
